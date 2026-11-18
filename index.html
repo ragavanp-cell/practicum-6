@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrainSphere | Corporate Training, Workshops & Reduction Services</title>
+    <!-- 4. External CSS -->
+    <link rel="stylesheet" href="trainsphere-positioning-styles.css">
+    <!-- 4. Internal CSS -->
+    <style>
+        .ts-internal-ticker-bar {
+            background: linear-gradient(90deg, #0f172a, #1e3a8a);
+            color: #ffffff;
+            padding: 8px 24px;
+            font-size: 0.9rem;
+            border-bottom: 2px solid #04aa6d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .ts-ticker-viewport {
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 720px;
+        }
+        /* 9. UI components for animation: @keyframes, animation property, text sliding effect, repeat animation, start from initial point */
+        @keyframes tsSlideLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .ts-ticker-stream {
+            display: inline-block;
+            animation: tsSlideLeft 20s linear infinite;
+            font-weight: 600;
+            color: #fde047;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sliding Announcement + 15. Dark Mode Light/Dark Buttons (onclick) -->
+    <div class="ts-internal-ticker-bar">
+        <div class="ts-ticker-viewport">
+            <span class="ts-ticker-stream">
+                🚀 TrainSphere 2026: Corporate Training, Executive Workshops &amp; Operational Cost/Carbon Reduction Services — Reserve Cohort Seats Now!
+            </span>
+        </div>
+        <div class="ts-theme-controls">
+            <button type="button" class="ts-theme-btn" onclick="switchPortalTheme('light')">☀️ Light</button>
+            <button type="button" class="ts-theme-btn" onclick="switchPortalTheme('dark')">🌙 Dark</button>
+        </div>
+    </div>
+
+    <!-- 5. Flexbox Layout Navigation Menu (ul & li, display: flex, inline-block, Hover drop-down menu) + 6. Sticky Positioning -->
+    <header class="ts-sticky-header" id="topHeader">
+        <div class="ts-brand-wrap">
+            <a href="#top" class="ts-brand-logo">Train<span style="color:#04aa6d;">Sphere</span></a>
+        </div>
+
+        <ul class="ts-flex-menu">
+            <li class="ts-menu-item ts-dropdown-parent">
+                <a href="#positioning-showcase" class="ts-menu-link">Workshops &#9662;</a>
+                <ul class="ts-hover-dropdown">
+                    <li><a href="#positioning-showcase">Positioning Showcase</a></li>
+                    <li><a href="#reduction-matrix">Reduction Matrix</a></li>
+                    <li><a href="#workshop-gallery">3-Column Studios</a></li>
+                </ul>
+            </li>
+
+            <li class="ts-menu-item ts-dropdown-parent ts-active-item">
+                <a href="#plans-quadrant" class="ts-menu-link">Plans &#9662;</a>
+                <ul class="ts-hover-dropdown">
+                    <li><a href="#plans-quadrant" onclick="focusQuadrantPlan('Freelancer')">Freelancer</a></li>
+                    <li><a href="#plans-quadrant" onclick="focusQuadrantPlan('Startup')">Startup</a></li>
+                    <li><a href="#plans-quadrant" onclick="focusQuadrantPlan('Enterprise')">Enterprise</a></li>
+                </ul>
+            </li>
+
+            <li class="ts-menu-item">
+                <a href="#multimedia-section" class="ts-menu-link">Media</a>
+            </li>
+
+            <li class="ts-menu-item">
+                <a href="#booking-validation" class="ts-menu-link">Contact</a>
+            </li>
+
+            <li class="ts-menu-item ts-menu-cta">
+                <button type="button" class="ts-btn-blue" onclick="showQuickNotice('Log In')">Log In</button>
+            </li>
+            <li class="ts-menu-item ts-menu-cta">
+                <button type="button" class="ts-btn-outline-light" onclick="showQuickNotice('Sign Up')">Sign Up</button>
+            </li>
+        </ul>
+    </header>
+
+    <!-- 1. Static HTML Web Page (h1, p, b, a, img, ol, ul, table) + 4. Inline CSS -->
+    <section id="top" class="ts-hero-block">
+        <span style="display:inline-block; background:#04aa6d; color:#ffffff; padding:5px 14px; border-radius:20px; font-size:0.84rem; font-weight:700;">
+            Corporate Training • Executive Workshops • Cost &amp; Carbon Reduction Services
+        </span>
+        <h1 id="mainPageTitle">TrainSphere: Precision Workforce Upskilling &amp; Operational Reduction</h1>
+        <p>
+            <b>TrainSphere</b> delivers hands-on <b>corporate training and workshops</b> paired with measurable
+            <b>cloud spend, workflow waste, and carbon footprint reduction services</b> across global enterprises.
+        </p>
+
+        <!-- Ordered List (ol) & Unordered List (ul) -->
+        <div class="ts-lists-container">
+            <div class="ts-list-card">
+                <h3>3-Phase Reduction &amp; Training Methodology (OL)</h3>
+                <ol>
+                    <li><b>Diagnostic Baseline:</b> Measure team skill gaps, idle cloud resources, and Scope 1–3 emissions.</li>
+                    <li><b>Experiential Workshops:</b> Instructor-led AI, DevSecOps, and Lean FinOps cohorts.</li>
+                    <li><b>Verified Reduction:</b> Achieve 30%+ sustained reduction in operational waste and CO₂e.</li>
+                </ol>
+            </div>
+            <div class="ts-list-card">
+                <h3>Core TrainSphere Service Tracks (UL)</h3>
+                <ul>
+                    <li>Applied Generative AI &amp; Process Automation Bootcamps</li>
+                    <li>Green FinOps &amp; Cloud Infrastructure Cost Reduction</li>
+                    <li>Executive Agile Leadership &amp; Supply-Chain Decarbonization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ts-hero-links">
+            <a href="#positioning-showcase" class="ts-btn-green">Explore Interactive Layout</a>
+            <a href="#booking-validation" class="ts-btn-blue">Book Team Workshop</a>
+        </div>
+    </section>
+
+    <!-- 6. POSITIONING ELEMENTS (Exact Practicum Visual Match: Top Left, Top Right, Centered, Bottom Left, Bottom Right + "Try it Yourself" interactive buttons) -->
+    <section id="positioning-showcase" class="ts-section-box">
+        <h2>Interactive CSS Positioning Showcase (Relative, Absolute, Fixed, Sticky &amp; z-index)</h2>
+        <p>
+            Click any <b>Try it Yourself</b> button below to highlight and inspect how <b>TrainSphere</b> anchors
+            positioned workshop badges across a full-bleed corporate training banner using <code>position: relative</code>,
+            <code>position: absolute</code>, and <code>z-index</code>:
+        </p>
+
+        <div class="ts-example-wrapper">
+            <div class="ts-example-heading">Example: TrainSphere Global Training &amp; Reduction Campus Overlay</div>
+
+            <!-- Relative Container with 5 Absolute Corner/Center Overlays -->
+            <div class="ts-pos-canvas" id="positioningCanvas">
+                <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                    alt="TrainSphere Corporate Training & Reduction Summit"
+                    class="ts-pos-bg-img"
+                >
+
+                <div class="ts-pos-label pos-top-left" id="badge-top-left">
+                    Top Left: AI &amp; Cloud Bootcamps
+                </div>
+
+                <div class="ts-pos-label pos-top-right" id="badge-top-right">
+                    Top Right: -34% Cost Reduction
+                </div>
+
+                <div class="ts-pos-label pos-centered" id="badge-centered">
+                    Centered: TrainSphere Live Cohort Hub
+                </div>
+
+                <div class="ts-pos-label pos-bottom-left" id="badge-bottom-left">
+                    Bottom Left: ISO 14064 Certified
+                </div>
+
+                <div class="ts-pos-label pos-bottom-right" id="badge-bottom-right">
+                    Bottom Right: -28% CO₂e Footprint
+                </div>
+            </div>
+
+            <div class="ts-try-yourself-bar">
+                <div class="ts-try-title">Try it Yourself:</div>
+                <div class="ts-try-buttons">
+                    <button type="button" class="ts-green-pill-btn" onclick="highlightOverlayBadge('top-left')">Top Left &raquo;</button>
+                    <button type="button" class="ts-green-pill-btn" onclick="highlightOverlayBadge('top-right')">Top Right &raquo;</button>
+                    <button type="button" class="ts-green-pill-btn" onclick="highlightOverlayBadge('bottom-left')">Bottom Left &raquo;</button>
+                    <button type="button" class="ts-green-pill-btn" onclick="highlightOverlayBadge('bottom-right')">Bottom Right &raquo;</button>
+                    <button type="button" class="ts-green-pill-btn" onclick="highlightOverlayBadge('centered')">Centered &raquo;</button>
+                </div>
+                <p id="positioningInspectorMsg" class="ts-inspector-readout">
+                    Active Layer: All 5 absolute overlays anchored inside a relative container (z-index: 10).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Centered Responsive Quadrant Layout -->
+    <section id="plans-quadrant" class="ts-section-box">
+        <h2>Centered Responsive Quadrant Layout — Training &amp; Reduction Plans</h2>
+        <p>Select a plan from the top navigation menu or inspect our 4 service quadrants below:</p>
+        <div class="ts-quadrant-center">
+            <div class="ts-quadrant-2x2">
+                <div class="ts-quad-cell" id="quad-Freelancer">
+                    <h3>Quadrant 1: Freelancer</h3>
+                    <p><b>$49/month</b> — 2 live workshops/mo + personal cloud &amp; carbon reduction calculator.</p>
+                </div>
+                <div class="ts-quad-cell" id="quad-Startup">
+                    <h3>Quadrant 2: Startup</h3>
+                    <p><b>$499/month</b> — Up to 50 team seats, quarterly private workshop &amp; FinOps audit.</p>
+                </div>
+                <div class="ts-quad-cell" id="quad-Enterprise">
+                    <h3>Quadrant 3: Enterprise</h3>
+                    <p><b>Custom</b> — Global multi-campus cohorts, Scope 1–3 emissions reduction &amp; SSO.</p>
+                </div>
+                <div class="ts-quad-cell" id="quad-Reduction">
+                    <h3>Quadrant 4: Reduction Sprint</h3>
+                    <p><b>Gain-Share</b> — Dedicated 6-week operational waste &amp; cloud bill reduction service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. Table Tag: Corporate Training & Reduction Impact Table -->
+    <section id="reduction-matrix" class="ts-section-box">
+        <h2>Corporate Training &amp; Reduction Services Benchmark Table</h2>
+        <p>Measured 90-day outcomes across <b>TrainSphere</b> enterprise client cohorts:</p>
+        <div class="ts-table-scroll">
+            <table class="ts-styled-table">
+                <thead>
+                    <tr>
+                        <th>Workshop &amp; Service Track</th>
+                        <th>Target Team</th>
+                        <th>Primary Reduction Metric</th>
+                        <th>Verified Outcome</th>
+                        <th>Delivery Mode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Green FinOps &amp; Cloud Rightsizing</b></td>
+                        <td>Cloud &amp; DevOps</td>
+                        <td>Idle Compute Spend &amp; Server CO₂</td>
+                        <td>-34% Monthly Cloud Cost</td>
+                        <td>3-Day Live Lab</td>
+                    </tr>
+                    <tr>
+                        <td><b>Generative AI Workflow Automation</b></td>
+                        <td>Product &amp; Ops</td>
+                        <td>Repetitive Manual Reporting Hours</td>
+                        <td>-42% Cycle Time</td>
+                        <td>2-Day Bootcamp</td>
+                    </tr>
+                    <tr>
+                        <td><b>Lean Supply-Chain &amp; Carbon Audit</b></td>
+                        <td>Procurement</td>
+                        <td>Scope 3 Logistics Emissions</td>
+                        <td>-28% tCO₂e Output</td>
+                        <td>4-Day Offsite</td>
+                    </tr>
+                    <tr>
+                        <td><b>Zero-Trust DevSecOps Engineering</b></td>
+                        <td>Platform Security</td>
+                        <td>Production Incident Downtime</td>
+                        <td>-51% MTTR Reduction</td>
+                        <td>3-Day Cyber Drill</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 7. Responsive Grid Layout (3-column grid, Images in grid container, Orientation overlay, Image loading="lazy", Dynamic image sizing) -->
+    <section id="workshop-gallery" class="ts-section-box">
+        <h2>3-Column Responsive Workshop &amp; Reduction Grid</h2>
+        <p>Adapts automatically across desktop (3 columns), tablet (2 columns), and phone (1 column):</p>
+        <div class="ts-grid-3col">
+            <article class="ts-grid-item">
+                <div class="ts-grid-img-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80"
+                        alt="AI Process Reduction Workshop"
+                        loading="lazy"
+                    >
+                    <span class="ts-orientation-tag">Track 01 • AI Automation</span>
+                </div>
+                <div class="ts-grid-text">
+                    <h3>AI Workflow Reduction Lab</h3>
+                    <p>Automate manual data pipelines and cut team administrative overhead by 40%.</p>
+                </div>
+            </article>
+
+            <article class="ts-grid-item">
+                <div class="ts-grid-img-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=80"
+                        alt="Executive Leadership Offsite"
+                        loading="lazy"
+                    >
+                    <span class="ts-orientation-tag">Track 02 • Agile Leadership</span>
+                </div>
+                <div class="ts-grid-text">
+                    <h3>Executive Lean Operations Sprint</h3>
+                    <p>Equip department heads with decision frameworks that eliminate cross-team bottlenecks.</p>
+                </div>
+            </article>
+
+            <article class="ts-grid-item">
+                <div class="ts-grid-img-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80"
+                        alt="Carbon Footprint Reduction Studio"
+                        loading="lazy"
+                    >
+                    <span class="ts-orientation-tag">Track 03 • Green FinOps</span>
+                </div>
+                <div class="ts-grid-text">
+                    <h3>Carbon &amp; Cloud Footprint Reduction</h3>
+                    <p>Optimize Kubernetes workloads and supplier contracts for verifiable ESG targets.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 2. Multimedia Elements for Layouts (audio, video, iframe, embed with controls) -->
+    <section id="multimedia-section" class="ts-section-box">
+        <h2>Multimedia Training &amp; Reduction Briefing Center</h2>
+        <p>Includes HTML5 <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;iframe&gt;</code>, and <code>&lt;embed&gt;</code> elements with controls:</p>
+        <div class="ts-media-2col">
+            <div class="ts-media-card">
+                <h3>1. Executive Audio Briefing (&lt;audio&gt;)</h3>
+                <p>2026 Corporate Training &amp; Carbon Reduction Keynote Summary:</p>
+                <audio controls preload="none" style="width:100%;">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support audio playback.
+                </audio>
+            </div>
+
+            <div class="ts-media-card">
+                <h3>2. Workshop Lab Preview (&lt;video&gt;)</h3>
+                <p>Sample footage from a live TrainSphere technical reduction cohort:</p>
+                <video controls width="100%" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=60">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+
+            <div class="ts-media-card">
+                <h3>3. Training Campus Map (&lt;iframe&gt;)</h3>
+                <p>Interactive regional hub location map:</p>
+                <iframe
+                    title="TrainSphere Campus Map"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=76.7400%2C10.9300%2C76.7600%2C10.9450&amp;layer=mapnik"
+                    width="100%"
+                    height="190"
+                    style="border:1px solid #cbd5e1; border-radius:8px;"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="ts-media-card">
+                <h3>4. Interactive Syllabus Card (&lt;embed&gt; with controls)</h3>
+                <p>Embedded vector curriculum &amp; reduction overview:</p>
+                <embed
+                    src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='155'><rect width='400' height='155' rx='10' fill='%230f172a'/><text x='20' y='42' fill='%2304aa6d' font-family='Arial' font-size='18' font-weight='bold'>TrainSphere 2026 Curriculum</text><text x='20' y='74' fill='%23ffffff' font-family='Arial' font-size='13'>• Corporate Workshops &amp; Leadership Labs</text><text x='20' y='100' fill='%2338bdf8' font-family='Arial' font-size='13'>• Cloud Cost &amp; Carbon Reduction Services</text><text x='20' y='130' fill='%2394a3b8' font-family='Arial' font-size='11'>WebTech Practicum 25CS208 Verified</text></svg>"
+                    type="image/svg+xml"
+                    width="100%"
+                    height="155"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Web Forms + 10. DOM Elements + 11. Form with Validation + 13. Task Manager + 14. Interactive Quiz -->
+    <section id="booking-validation" class="ts-section-box">
+        <div class="ts-interactive-split">
+            <!-- Validated Form -->
+            <div class="ts-panel-box">
+                <h2>Book a Workshop or Reduction Sprint (Validated Form)</h2>
+                <p>Checks for empty input boxes and verifies that participant count contains only numbers:</p>
+
+                <form id="tsBookingForm" novalidate>
+                    <div class="ts-form-row">
+                        <label for="coordinatorName">Coordinator Name *</label>
+                        <input type="text" id="coordinatorName" name="coordinatorName" placeholder="e.g., Rohan Verma" required>
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label for="coordinatorEmail">Work Email *</label>
+                        <input type="email" id="coordinatorEmail" name="coordinatorEmail" placeholder="rohan@enterprise.com" required>
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label for="teamSeatsInput">Number of Participants (Numbers Only) *</label>
+                        <input type="text" id="teamSeatsInput" name="teamSeatsInput" placeholder="e.g., 40" required>
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label for="planTierSelect">Select Plan / Service</label>
+                        <select id="planTierSelect" name="planTierSelect">
+                            <option value="Freelancer">Freelancer ($49/mo)</option>
+                            <option value="Startup" selected>Startup ($499/mo)</option>
+                            <option value="Enterprise">Enterprise (Custom)</option>
+                            <option value="Reduction Sprint">Cost &amp; Carbon Reduction Sprint</option>
+                        </select>
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label>Mode &amp; Add-Ons (Radio &amp; Checkbox Types):</label>
+                        <div class="ts-check-group">
+                            <label><input type="radio" name="sessionFormat" value="Virtual" checked> Virtual</label>
+                            <label><input type="radio" name="sessionFormat" value="On-Site"> On-Site</label>
+                            <label><input type="checkbox" id="carbonAuditCheck" checked> Include Carbon Reduction Audit</label>
+                        </div>
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label for="cohortDateInput">Preferred Date</label>
+                        <input type="date" id="cohortDateInput" name="cohortDateInput">
+                    </div>
+
+                    <div class="ts-form-row">
+                        <label for="goalsTextarea">Training &amp; Reduction Goals *</label>
+                        <textarea id="goalsTextarea" name="goalsTextarea" rows="3" placeholder="Specify target workshops and cost/CO2 reduction goals..." required></textarea>
+                    </div>
+
+                    <!-- 11. Submit button (onclick) -->
+                    <button type="submit" id="validateSubmitBtn" class="ts-btn-green" onclick="return handleFormValidation(event)">
+                        Submit &amp; Validate Form
+                    </button>
+                    <p id="validationStatusText" class="ts-status-line" aria-live="polite"></p>
+                </form>
+
+                <!-- 9. Timers (setInterval / clearInterval) -->
+                <div class="ts-timer-strip">
+                    <span>Cohort Early-Bird Timer: <b id="countdownClock">05:00</b></span>
+                    <button type="button" class="ts-small-btn" onclick="stopCountdown()">Pause</button>
+                    <button type="button" class="ts-small-btn" onclick="startCountdown()">Resume</button>
+                </div>
+            </div>
+
+            <!-- Right Column: 13. Task Manager + 14. Interactive Quiz -->
+            <div class="ts-right-stack">
+                <!-- 13. Task Manager (Input box, Add button onclick, CRUD array of tasks) -->
+                <div class="ts-panel-box">
+                    <h3>Workshop &amp; Reduction Task Manager (CRUD Array)</h3>
+                    <div class="ts-crud-bar">
+                        <input type="text" id="newTaskInput" placeholder="Enter new training or reduction milestone...">
+                        <button type="button" id="addTaskButton" class="ts-btn-blue" onclick="createTaskItem()">Add</button>
+                    </div>
+                    <ul id="crudTaskList" class="ts-task-ul"></ul>
+                </div>
+
+                <!-- 14. Interactive Component (Quiz questions array + Next button onclick) -->
+                <div class="ts-panel-box">
+                    <h3>TrainSphere Knowledge &amp; Positioning Quiz</h3>
+                    <p id="quizPromptText" class="ts-quiz-question">Loading question...</p>
+                    <div id="quizChoicesContainer" class="ts-quiz-choices"></div>
+                    <p id="quizResultLine" class="ts-quiz-result"></p>
+                    <button type="button" id="nextQuestionBtn" class="ts-btn-green" onclick="advanceQuizQuestion()">
+                        Next Question &raquo;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Endpoint Data Management (API calls fetch/AJAX, JS function process & display, Test / debugging) -->
+    <section id="api-benchmarks" class="ts-section-box">
+        <div class="ts-api-top">
+            <div>
+                <h2>Live Partner Reduction Benchmarks (Fetch API)</h2>
+                <p>Retrieves live partner telemetry via JavaScript <code>fetch()</code> and processes results into cards:</p>
+            </div>
+            <button type="button" class="ts-btn-blue" onclick="loadEndpointBenchmarks()">Reload API Data</button>
+        </div>
+        <div id="endpointCardsGrid" class="ts-api-grid"></div>
+    </section>
+
+    <!-- Fixed Positioning Floating Help Pill (6. Fixed positioning anchors element to viewport) -->
+    <a href="#top" class="ts-fixed-top-pill" title="Back to Top">&#8593; Top</a>
+
+    <!-- Footer -->
+    <footer class="ts-site-footer">
+        <p>&copy; 2026 <b>TrainSphere</b> — Corporate Training, Workshops &amp; Reduction Services.</p>
+    </footer>
+
+    <script src="trainsphere-positioning-logic.js"></script>
+</body>
+</html>
